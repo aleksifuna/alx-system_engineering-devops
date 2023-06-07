@@ -11,3 +11,4 @@ rm -r /tmp/my_first_directory- deletes the directory /tmp/my_first_directory
 cd --changes the working directory to the previous one
 ls -la . .. /boot- lidtd sll files in the current directory and the parent of the working directory and the /boot directory in long format including hidden ones
 file tmp/iamafile-prints the type of file
+ln -s /bin/ls __ls__- creates a symbolic link to /bin/ls
