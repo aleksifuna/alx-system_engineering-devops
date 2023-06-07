@@ -7,3 +7,4 @@ ls -aln- displays current directory contents in long format with user and group 
 mkdir /tmp/my_first_directory- creates a directory in /tmp directory
 mv tmp/betty tmp/my_first_directory- moves the file betty from /tmp to /tmp/my_first_directory
 rm /tmp/my_first_directory/betty- deletes the file betty in my_first_directory folder
+rm -r /tmp/my_first_directory- deletes the directory /tmp/my_first_directory
