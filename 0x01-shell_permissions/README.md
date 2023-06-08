@@ -11,3 +11,4 @@ chmod --reference=olleh hello:sets the mode of hello to be the same as olleh
 chmod a-x */:sets the mode of all subdirectories in the parent directory to have execute permissions
 mkdir -m 751 my_dir: makes a directory called my_dir and assigns the mode 751 to it
 chown :school hello: changes ownership group to school
+chmod -R vincent:staff .:changes the owner and group owner to vincent and staff respectively for all files in the current working directory
