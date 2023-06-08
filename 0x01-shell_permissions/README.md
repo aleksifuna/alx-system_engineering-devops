@@ -9,3 +9,4 @@ setfacl -m u::--- -m g::--- -m o::rwx: sets different permissions to different u
 chmod 753 hello: sets the permissions to the file hello to 753
 chmod --reference=olleh hello:sets the mode of hello to be the same as olleh
 chmod a-x */:sets the mode of all subdirectories in the parent directory to have execute permissions
+mkdir -m 751 my_dir: makes a directory called my_dir and assigns the mode 751 to it
