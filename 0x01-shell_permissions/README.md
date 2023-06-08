@@ -7,3 +7,4 @@ chmod ug+x,o+r hello:gives the owner and group owner execute permissions, gives 
 chmod ugo+x:adds exectuion rights to owner,group owner and others on file hello
 setfacl -m u::--- -m g::--- -m o::rwx: sets different permissions to different users
 chmod 753 hello: sets the permissions to the file hello to 753
+chmod --reference=olleh hello:sets the mode of hello to be the same as olleh
