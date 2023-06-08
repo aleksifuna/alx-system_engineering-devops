@@ -14,3 +14,4 @@ chown :school hello: changes ownership group to school
 chmod -R vincent:staff .:changes the owner and group owner to vincent and staff respectively for all files in the current working directory
 chmod vincent:staff _hello: changes the owner and group of _hello to vinvent and staff resp
 chown --from=guillaume betty hello: changes ownership from guillaume to betty
+the script will play the StarWars IV episode in the terminal
