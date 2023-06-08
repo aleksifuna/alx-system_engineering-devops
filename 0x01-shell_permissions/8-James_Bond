@@ -1,2 +1,3 @@
 #!/bin/bash
-setfacl -m u::--- -m g::--- -m o::rwx hello
+chmod 007 hello
+
