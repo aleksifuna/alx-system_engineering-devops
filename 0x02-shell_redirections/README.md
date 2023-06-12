@@ -16,3 +16,4 @@ grep -v bin /etc/passwd: Displays all the lines in the file /etc/password that d
 grep '^[[:upper:]]' /etc/ssh/sshd_config:displays lines starting with alphabets in the file /etc/ssh/sshd_config
 tr 'Ac' 'Ze': replaces any occurence of A or c with Z and e respectively
 tr -d 'Cc': deletes any occurence of C or c from the standard input
+rev :reverses input given
