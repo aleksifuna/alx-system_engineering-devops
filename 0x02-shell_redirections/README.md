@@ -11,3 +11,4 @@ find . -name "*.js" -type f -delete: deletes only files with .js exetension igno
 find . -type d -print |wc -l: counts the number of directories and subdirecotries in a given parent dir
 cat list|sort|uniq: prints the contents of the file cat in a sorted format and only uniq items
 grep root /etc/passwd: displays the lines containing the pattern "root" in /etc/passwd
+grep bin /etc/passwd: displays the number of lines containing bin in /etc/passwd
