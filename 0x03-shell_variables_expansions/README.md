@@ -1,6 +1,7 @@
 alias ls=rm *:creates an alias names ls to perform rm *
-export PATH=$PATH:/action
 echo "hello $USER": prints hello user where user is the current linux user
+export PATH=$PATH:/action
+echo $((`echo $PATH|grep -o ":/"|wc -l`+1)):counts the number of Directories in PATH
 printev:lists environment variables
 set: lists all local variables and environment variables and functions
 BEST="School":creates a local variable 
