@@ -20,3 +20,4 @@ tr 'Ac' 'Ze': replaces any occurence of A or c with Z and e respectively
 tr -d 'Cc': deletes any occurence of C or c from the standard input
 rev :reverses input given
 cat /etc/passwd|sort: displays all the users and theie home directories sorted by users
+find . -empty | tr -d ./:displays all the empty files including hidden ones without directory
