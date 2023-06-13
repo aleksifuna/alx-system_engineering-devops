@@ -14,3 +14,4 @@ echo {a..z}{a..z}|tr ' ' '\n'|grep -v "oo":prints all possible combinations of t
 printf "%.2f\n" $NUM:prints anumber with two decimal places followed by a new line
 printf "%x\n" $DECIMAL: converts decimal to hexadecimal number
 tr 'A-Za-z' 'N-ZA-Mn-za-m":does the rot 13 encryption
+perl -lne 'print if $*%2==0':prints lines in odd position
