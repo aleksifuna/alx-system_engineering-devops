@@ -15,3 +15,5 @@ printf "%.2f\n" $NUM:prints anumber with two decimal places followed by a new li
 printf "%x\n" $DECIMAL: converts decimal to hexadecimal number
 tr 'A-Za-z' 'N-ZA-Mn-za-m":does the rot 13 encryption
 perl -lne 'print if $*%2==0':prints lines in odd position
+echo $(printf %o $(($((5#$(echo $WATER | tr 'water' '01234'))) + $((5#$(echo $STIR | tr 'stir.' '01234'))))) | tr '01234567' 'bestchol'):"adds to numbers stored in environment variables
+
