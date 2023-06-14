@@ -22,3 +22,4 @@ rev :reverses input given
 cat /etc/passwd|sort: displays all the users and theie home directories sorted by users
 find . -empty | tr -d ./:displays all the empty files including hidden ones without directory
 find . -type f -name '*.gif'|tr -d ./,.gif:Write a script that lists all the files with a .gif extension in the current directory and all its sub-directories.
+cut -c 1|paste -s -d '':used to print the first letter of each line
