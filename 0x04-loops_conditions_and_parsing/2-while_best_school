@@ -1,0 +1,8 @@
+#!/bin/env bash
+# displays best school 10 time using while loop
+
+i=0
+while ((i < 10)); do
+	echo "Bestschool"
+	((i++));
+done
