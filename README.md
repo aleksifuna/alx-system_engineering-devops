@@ -1,1 +1,2 @@
-This repository contains scripts for 0x00. Shell, basics tasks
+# System engineering devops
+## This repository contains shell scripts for Shell for devops projects.
