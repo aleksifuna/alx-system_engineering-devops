@@ -5,5 +5,7 @@ for item in *; do
 	if [[ $item == *-* ]]; then
 		itemname="${item#*-}"
 		echo "$itemname"
+	else
+		echo "$item"
 	fi
 done
