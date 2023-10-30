@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# manages manage_my_process daemon
+
+case $1 in
+	"start")
+		nohup ./manage_my_process > /dev/null 2>&1 &
+		echo $! > /var/run/my_process.pid
+		echo "manage_my_process started"
+					;;
+	"stop")
+		pid=$(cat /var/run/my_process.pid)
+		kill "$pid"
+		rm /var/run/my_process.pid
+		echo "manage_my_process stopped"
+					;;
+	"restart")
+		pid=$(cat /var/run/my_process.pid)
+		kill "$pid"
+		rm /var/run/my_process.pid
+		nohup ./manage_my_process > /dev/null 2>&1 &
+		echo $! > /var/run/my_process.pid
+		echo "manage_my_process restarted"
+					;;
+		*)
+		echo "Usage: manage_my_process {start|stop|restart}"
+esac
