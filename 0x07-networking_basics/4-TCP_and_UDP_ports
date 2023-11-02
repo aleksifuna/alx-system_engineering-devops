@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Displays listneing ports with PID of programs to which each socket belongs
+
+netstat -pl
