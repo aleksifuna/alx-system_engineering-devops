@@ -1,0 +1,23 @@
+https://drive.google.com/file/d/1uL0P8yfKQxQfBt2O-2jTtYlTd4QPXJ4Y/view?usp=sharing
+
+What is a server?
+It is a computer hardware or software that provides other programs or devices aka clients with functionality and resources.
+What is the role of the domain name?
+provdes a human friendly address to resources on the internet.
+What type of DNS record www is in www.foobar.com?
+It is a CNAME record as its an alias to foobar.com
+What is the role of the web server?
+Responds to http requests from broswers with html pages
+What is the role of the application server?
+Provides the business logic of the system to clients on the network
+What is the server using to communicate with the computer of the user requesting the website?
+the server has a webserver software installed that listens to http requests from the users on a specific port and respond to them by sending the html pages requested or an error.
+
+
+ISSUES WITH THE SERVER
+SPOF
+since we are using one server to respond to our clients request whenever it goes down the whole application goes offline as there is no redundancy to improve on availability.
+Downtime when maintenance needed (like deploying new code web server needs to be restarted)
+Incase we need to do maintenance on the app the whole system will go offline since we havent provided a redundancy plan.
+Cannot scale if too much incoming traffic
+our system is pretty much fixed as we are running only one server. incase of too much traffic response time will be greatly affected.
