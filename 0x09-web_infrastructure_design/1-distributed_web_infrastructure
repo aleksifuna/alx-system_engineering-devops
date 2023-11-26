@@ -1,0 +1,26 @@
+https://drive.google.com/file/d/16ARX5Ez5EIfpQt99Y3OAL2hJCiLxI1dU/view?usp=sharing
+
+
+explanation for the additional elements
+we have added another server running a webserver, application server and MySQL server togethor with the code base behind  Loadbalancer that runs the two servers in active passive mode incase one server goes down the other takes over for continous service availability.
+
+What distribution algorithm your load balancer is configured with and how it works?
+its a passive failover where the loadbalancer direct traffic to an active server until it fails then it redirects the traffic to a standby server.
+
+Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both?
+its enabling active passive setup where traffic is directed to an active server until if fails then the traffic is redirected to astandby server in active active setup the loadbalancer directs traffic to both servers using set rules
+
+How a database Primary-Replica (Master-Slave) cluster works
+one server is nomitated as a primary master database with read write capability with a slave database attached to it syncing the changes made on the primary database with it in realtime or near real time depending on the configuration. 
+when primary database fails the slave is promoted to primary database and once failed one is fixed it can be delegated to the role of a slave.
+
+What is the difference between the Primary node and the Replica node in regard to the application?
+The primary node handles the traffic and request while the Replica is a copy of the primary node tracking all the changes made on the primary node and sync with it.
+
+ISSUES WITH THE INFRASTRUCTURE
+Where are SPOF
+the loadbalancer is the single point of failure as its the only non redundant element on the system.
+Security issues (no firewall, no HTTPS)
+with no https and firewall the system is prone to intrutions from threats.
+No monitoring
+we also dont have monitoring so getting vital metrics on system perfomance to inform decisions is not possible
