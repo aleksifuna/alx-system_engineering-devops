@@ -1,0 +1,34 @@
+https://drive.google.com/file/d/1BDss3RJ5gdWEyReHZtJSsBMYT4K9T756/view?usp=sharing
+
+Explanation for additional elements
+Firewall
+controls incoming and outgoing traffic filtering them as per some specific rules
+SSL Certificates
+Encrypts the information sent by the client and server to give access to owners of primary keys
+Monitoring clients
+to gather and report metrics of server perfomance.
+1 extra server
+for redundancy in order to make our services highly available
+
+What are firewalls for?
+controls incoming and outgoing traffic filtering them as per some specific rules
+
+Why is the traffic served over HTTPS?
+It Encrypts the information sent by the client and server to give access to owners of primary keys
+
+What monitoring is used for?
+gather and report metrics of server perfomance.
+
+How the monitoring tool is collecting data
+a client is installed on the server that collects the perfomance metrics and reports them.
+
+Explain what to do if you want to monitor your web server QPS
+you can use a monitoring tool that collects the data and sends to you
+
+ISSUES WITH THE SYSTEM
+Why terminating SSL at the load balancer level is an issue
+SSL certificate generation requires some cryptography calculations that are resource intensive that will impact the perfomance of the loadbalancer
+Why having only one MySQL server capable of accepting writes is an issue
+Response time is affected as only one server is handling all requests of querrying.
+Why having servers with all the same components (database, web server and application server) might be a problem
+Each component need a specific environment to run so bundling everything in one server will make optimization difficult
