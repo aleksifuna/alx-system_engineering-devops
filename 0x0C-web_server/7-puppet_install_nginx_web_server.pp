@@ -1,21 +1,6 @@
 # using puppet to Install and configure nginx server
 
-package { 'nginx':
-  ensure => 'installed'
-}
-
-file { '/var/www/html/index.html':
-  content => 'Hello World',
-}
-
-file_line { 'redirection-301':
-  ensure => 'present',
-  path   => '/etc/nginx/sites-available/default',
-  after  => 'listen 80 default_server;',
-  line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
-}
-
-service { 'nginx':
-  ensure  => running,
-  require => package['nginx'],
+exec { 'server configuration':
+  provider => shell,
+  command  => 'sudo apt-get -y update; sudo apt-get -y install nginx; echo "Hello World!" > /var/www/html/index.html; sudo sed -i "/server_name _;/a location /redirect_me {\\n\\treturn 301 https://google.com; listen 80; \\n\\t}\\n" /etc/nginx/sites-available/default; sudo service nginx restart'
 }
