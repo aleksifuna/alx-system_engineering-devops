@@ -2,13 +2,14 @@
 # installs and configures HAproxy
 
 apt-get update
-apt-get install -y haproxy=2.0.\*
+apt-get -y upgrade
+apt-get install -y haproxy
 cat <<EOF >> /etc/haproxy/haproxy.cfg
 
 frontend my_frontend
 	bind *:80
+	mode http
 	default_backend my_backend
-
 
 backend my_backend
 	balance roundrobin
