@@ -1,7 +1,7 @@
 # installs and configures a nginx server
 
 exec { 'update_package_list':
-  command  => 'sudo apt-get update',
+  command  => 'apt-get update',
   provider => 'shell',
 }
 
@@ -13,15 +13,21 @@ file { '/var/www/html/index.html':
   content => 'Hello World!',
 }
 
-file_line { 'header line':
-  ensure => present,
-  path   => '/etc/nginx/sites-available/default',
-  line   => "	location / {
-  add_header X-Served-By ${hostname};",
-  match  => '^\tlocation / {',
+file { '/etc/nginx/sites-available/default':
+  content => "
+  server {
+  listen 80;
+  listen [::]:80 default_server;
+  root /var/www/html;
+  index  index.html index.htm;
+  location / {
+      try_files \$uri \$uri/ =404;
+      add_header X-Served-By \${hostname};
+    }
+  }",
 }
 
 exec { 'restart service':
-  command  => 'sudo service nginx restart',
+  command  => 'service nginx restart',
   provider => shell,
 }
