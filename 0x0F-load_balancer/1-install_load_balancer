@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# installs and configures HAproxy
+
+apt-get update
+apt-get install -y haproxy=2.0.\*
+cat <<EOF >> /etc/haproxy/haproxy.cfg
+
+frontend my_frontend
+	bind *:80
+	default_backend my_backend
+
+
+backend my_backend
+	balance roundrobin
+	server web-01 18.234.192.15:80 check
+	server web-02 54.160.105.242:80 check
+EOF
+
+service haproxy restart
