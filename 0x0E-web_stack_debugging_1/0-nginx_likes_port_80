@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 # automates server fix
 
-apt-get update
-apt-get install -y nginx
 sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 service nginx restart
