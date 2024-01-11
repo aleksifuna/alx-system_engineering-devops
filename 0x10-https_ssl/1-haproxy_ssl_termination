@@ -33,15 +33,24 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend my_frontend
+frontend www-http
         bind *:80
-        bind *:443 ssl crt /etc/letsencrypt/live/www.aleksifuna.tech-0001/fullchain.pem
-        http-request redirect scheme https unless { ssl_fc }
-        default_backend my_backend
+        http-request add-header X-Forwarded-Prot http
+        default_backend www-backend
 
+frontend www-https
+        bind *:443 ssl crt /etc/haproxy/certs/combined.pem
+        http-request add-header X-Forwarded-Proto https
+        acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+        use_backend letsencrypt-backend if letsencrypt-acl
+        default_backend www-backend
 
-backend my_backend
+backend www-backend
         balance roundrobin
+        redirect scheme https code 301 if !{ ssl_fc }
         server web-01 18.234.192.15:80 check
         server web-02 54.160.105.242:80 check
+
+backend letsencrypt-backend
+        server letsencrypt 127.0.0.1:54321
 
