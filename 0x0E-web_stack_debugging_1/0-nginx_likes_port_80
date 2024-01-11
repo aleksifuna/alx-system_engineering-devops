@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# automates server fix
+# automates server fix to enable it listen to port 80
 
-sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
-service nginx restart
+sudo sed -i 's/8080/80/' /etc/nginx/sites-enabled/default
+sudo service nginx restart
