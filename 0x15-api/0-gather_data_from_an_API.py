@@ -23,6 +23,6 @@ if __name__ == "__main__":
                 if todo.get("completed") is True:
                     completed += 1
                     titles.append(todo.get("title"))
-        print(f"Employee {name} is done with tasks({completed}/{total})")
+        print(f"Employee {name} is done with tasks({completed}/{total}):")
         for title in titles:
             print(f"\t {title}")
